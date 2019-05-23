@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="#fff"
+                                                   tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/appBarLayout">
+        <androidx.appcompat.widget.Toolbar android:layout_width="match_parent"
+                                           android:layout_height="wrap_content"
+                                           app:title="Morse Translator"
+                                           android:background="#fff">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:id="@+id/linearLayout" android:layout_marginTop="16dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:layout_weight="0.4"
+                          android:text="Alphabet"
+                          android:textAlignment="center"
+                          android:textSize="20sp"
+                          android:textColor="#000"
+                          android:id="@+id/tvOrigin"/>
+                <ImageButton
+                        android:id="@+id/btnSwap"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_swap"
+                        android:background="#fff" tools:ignore="VectorDrawableCompat"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:layout_weight="0.4"
+                          android:text="Morse"
+                          android:textSize="20sp"
+                          android:textAlignment="center"
+                          android:textColor="#000"
+                          android:id="@+id/tvTranslated"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Only accepting dot(.),dash(-),and underscore(_)"
+            android:textColor="#ff0000"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+    <EditText
+            android:id="@+id/etOrigin"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvDesc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="#000"
+            android:background="#fff"
+            android:hint="Insert your text here"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="36dp"
+            android:textSize="24sp"
+            android:lines="6"/>
+    <ImageButton
+            android:id="@+id/btnCamera"
+            android:layout_width="24dp" android:layout_height="24dp"
+            android:background="#fff"
+            app:srcCompat="@drawable/ic_camera" tools:ignore="VectorDrawableCompat"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="@+id/etOrigin"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp"/>
+    <EditText android:id="@+id/etTranslated"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              app:layout_constraintTop_toBottomOf="@+id/etOrigin"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:textColor="#fff"
+              android:background="#1E88E5"
+              android:textSize="24sp"
+              android:hint="Translation here"
+              android:paddingStart="16dp"
+              android:paddingEnd="16dp"
+              android:paddingTop="16dp"
+              android:paddingBottom="36dp"
+              android:lines="6" android:enabled="false"/>
+    <ImageButton
+            android:id="@+id/btnCopy"
+            android:layout_width="24dp" android:layout_height="24dp"
+            android:background="#1E88E5"
+            android:tint="#fff"
+            app:srcCompat="@drawable/ic_content_copy" tools:ignore="VectorDrawableCompat"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="@+id/etTranslated"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
